@@ -1,0 +1,43 @@
+
+
+.tile
+{
+max-width: 600px;
+width: 80vw;
+height: auto;
+display: inline-block;
+box-shadow: 1px 2px 3px gray;
+cursor:pointer;
+margin:30px;
+border-radius: 5px;
+}
+
+.card{
+    display: inline-block;
+}
+
+.tile_image{
+    background-size: cover;
+    max-width: 200px;
+max-height: 300px;
+width: 30vw;
+height: 240px;
+float: right;
+margin-left: 20px;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+.tile_name{
+    max-width: 400px;
+    max-height: 300px;
+    min-width: 50vw;
+    min-height: 200px;
+   font-family: 'Raleway';
+   text-align: justify;
+   padding:20px;
+   
+}

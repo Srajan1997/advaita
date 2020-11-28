@@ -1,0 +1,52 @@
+
+body{ font-family: 'Raleway';
+    overflow-x: hidden;}
+#home_container{ width:102vw; height:70vh; background-size: cover;transition-property: 3s;position: relative;top:-2vw;left:-2vw;}
+#home_container_plan{ width:105vw; height:170px;z-index:3; margin-top: -30px;background-color:white;margin-left:-20px;background-size: cover;box-shadow: 8px 10px 15px gray; transition-duration: 2s;position: fixed;}
+
+
+.home_body{position: relative;top:-280px;}
+
+.city_heading{
+    font-family: 'Raleway';
+    color:#a6a6a6;
+    font-size: 200px;
+    text-transform: capitalize;
+}
+
+.city_content{
+    font-size: 20px;
+    font-family: 'Raleway';
+    line-height: normal;
+    text-align: center;
+    width:40vw;
+    border-color: rgb(184, 184, 184) white rgb(184, 184, 184) white;
+    border-width: 1px;
+    border-style: solid;
+}
+
+
+#title
+{
+    font-family: 'Ubuntu';
+    color:white;
+    font-size: 100px;
+   
+}
+
+#title_tab{
+    font-family: 'Ubuntu';
+    position: relative;
+    top:150px;
+}
+
+
+.icon_strip{
+    height: 60px;
+    width:60px;
+    border-radius:30px;
+    display: inline-block;
+    background-size: cover;
+    margin-right:-10px;
+    margin-bottom: 30px;
+}

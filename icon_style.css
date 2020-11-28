@@ -1,0 +1,60 @@
+.icon_image:not(:hover)
+{  
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    position: relative;
+    top:5px;
+    background-color: white;
+    background-size: cover;
+    transition-duration: 1s;
+}
+
+.icon
+{
+width: 100px;
+height: 100px;
+display: inline-block;
+border-radius: 50px;
+box-shadow: 5px 8px 12px gray;
+cursor:pointer;
+margin:60px;
+background-color: white;
+}
+
+.icon:hover
+{
+width: 100px;
+height: 100px;
+display: inline-block;
+border-radius: 50px;
+box-shadow: 3px 5px 8px gray;
+transition-duration: 1s;
+cursor:pointer;
+margin:60px;
+}
+
+.icon_image:hover{
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    position: relative;
+    top:5px;
+    background-color: red;
+    background-size: cover;
+transform: rotate(3deg);
+transition-duration: 1s;
+}
+
+
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+.icon_name{
+    margin-top:30px;
+    font-family: 'Ubuntu';
+    font-size: 16px;
+}

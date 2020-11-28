@@ -1,0 +1,58 @@
+.frame{
+width:300px;
+height:300px;
+border-width: 10px 10px 75px 10px;
+border-style: solid;
+border-color: white;
+box-shadow: 8px 10px 15px gray;
+position: relative;
+background-color: teal;
+font-family: 'Permanent Marker';
+display: inline-block;
+}
+
+body{overflow-X: hidden;}
+
+.frames{
+    position: relative;top:50px; left:500px;
+}
+
+.frame:hover{
+    
+    transition-duration: 0.5s;
+   
+    }
+
+.tick{
+    color:#088a54;cursor:pointer;display:inline-block;margin:20px;margin-top:10px;font-weight: bold;position: relative;top:300px;font-size: 20px;
+}
+    
+.cross{
+    margin:20px;color:#c41829;cursor:pointer;display:inline-block;margin-top:10px;font-weight: bold;position: relative;top:300px;font-size: 20px;
+}
+
+.label{
+    position: relative;
+    top:305px;
+}
+
+.health{
+    font-family: 'Raleway';
+    height:150px;
+    width:150px;
+    display: inline-block;
+    opacity: 0.5;
+    background-size: cover;
+}
+
+.health:hover{
+    opacity: 0.7;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.healths{
+    position: relative;
+    top:150px;
+    display: none;
+}

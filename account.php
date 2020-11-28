@@ -3,38 +3,6 @@
 session_start();
 
 if(!isset($_SESSION['user_id'])) header('Location: login.php');
-$user_id = $_SESSION['user_id'];
-
-
-function icon_gen_function_goal($row)
-{
-
-
-$goals = array('r_r','a_r','e_r','s_r','n_r','h_r','m_r','c_r');
-
-$names = array('Romance','Adventure','Entertainment','Spirituality','Nature','History','Markets','Lifestyle');
-
-include('assets/components/icon_class_select_choice.php');
-
-
-echo "<center>";
-for($x = 0; $x<sizeof($goals);$x++)
-{
-if($row[$goals[$x]]==1)
-{
-    $place_name = $names[$x];
-    $image_url = "'assets/images/". $goals[$x] . ".jpeg'";
-    $link_base = '';
-    new icon_select_choice($link_base,$image_url,$place_name);
-}
-}
-echo "</center>";
-}
-
-
-
-
-include('home_links.php');
 
 $connection = mysqli_connect("localhost","root","","advaita");
 
@@ -42,49 +10,34 @@ $query = "SELECT * FROM user_table WHERE user_id='$user_id'";
 
 $result = mysqli_query($connection,$query);
 
-$data = mysqli_fetch_assoc($result);
-if($data['profile_status']==0) header('Location: build_profile.php');
+$data = mysqli_fetch_row($result);
 
+include('assets/components/icon_gen_select_goal.php');
+
+function issue_gen($issue)
+{
+    if($data[$issue]==1) echo $issue . " Issues | ";
+}
 
 ?>
 <html>
-    <style>
-body{
-    background-image:url('assets/images/pic.jpg');
-    background-size:cover;
-}
-
-    </style>
     <body>
         <center>
-            <br><br><br><Br>
-<button class="bttn-slant bttn-lg bttn-primary" >Your Advaita Profile</button>
+<button class="bttn-slant bttn-lg bttn-danger" >Your Advaita Profile</button>
 <br><br>
-<?php echo "<h2>Hi, " . $data['user_name'] . "</h2>";?>
-<?php echo "<h3>Your Age: ".$data['age'] . "</h3>";?>
+<?php echo "Hi, ".$data['user_name'];?>
 <br><br>
-<button class="bttn-slant bttn-md bttn-success" >Travel Preferences</button>
-<br><br>
+<?php echo "Your Age: ".$data['age'];?>
+<br><br><br>
+<button class="bttn-slant bttn-md bttn-success" >Your Travel Preferences</button>
 <div>
-  <?php  icon_gen_function_goal($data); ?>
+  <?php  icon_gen_function_goal($result); ?>
 </div>
 <br><br><br>
-<?php if($data['vision']==1 || $data['lung']==1 || $data['motion']==1 ) echo '<button class="bttn-slant bttn-md bttn-warning" >Health Concerns</button>';
-else echo '<button class="bttn-slant bttn-md bttn-warning" >No Health Issues registered!</button>';
-?>
+if($data['vision']==1 || $data['lung']==1 || $data['motion']==1 ) echo '<button class="bttn-slant bttn-md bttn-warning" >Your Health Concerns</button>';
 <br><br>
 <div>
-  <?php
-  if($data['lung']==1) echo "Breathing Trouble ";
-  if($data['vision']==1) echo "| Vision Issues ";
-  if($data['motion']==1) echo "| Movement Restrictions";
-  ?>
+  <?php  issue_gen('vision'); issue_gen('motion'); issue_gen('lung'); ?>
 </div>
-
-<br><br><br>
-<button class="bttn-fill bttn-sm bttn-danger" onclick="window.location.assign('profile_builder.php')" >Update your Profile</button>
-<button class="bttn-fill bttn-sm bttn-royal" onclick="window.location.assign('assets/scripts/logout.php')" >Log Out of Advaita</button>
-<button class="bttn-fill bttn-sm bttn-danger" onclick="window.location.assign('assets/requirements/change_password.php')" >Change Password</button>
-<br>
 </center>
     </body>
